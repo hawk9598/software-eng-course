@@ -81,7 +81,11 @@ public class Exam { //Initializes the Exam Class, which contains a Name, and the
           }
     }
     public static Exam readXMLFile(String filename) throws SAXException, IOException { 
-        //Uses DOM from mkyong to read an XML file into an exam. The XML format must be the same as mkyong's.
+        /*Uses DOM from mkyong to read an XML file into an exam. The XML format must be the same as mkyong's.
+		  The code scans for the tag names which corresponds to the type of question in the exam, and then scans for each detail of the question
+		  via tag names again. Only the question details itself and the exam name is scanned using getAttribute, due to the formatting of
+		  the XML.
+		*/
         Exam resExam = new Exam();
         File fXmlFile = new File(filename);
         
